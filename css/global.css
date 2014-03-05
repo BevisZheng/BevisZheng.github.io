@@ -32,9 +32,11 @@ body .hide{display:none;}
 .right{float:right;}
 
 a{color: #111; text-decoration: none;}
+code {background:#eee;border:1px solid #ccc;padding:2px 5px;border-radius: 2px;font-family:"微软雅黑","Arial","Helvetica","sans-serif";word-wrap:break-word;}
 /* layout css */
 body{
 	background-color: #e2e1de;
+	font-family: "微软雅黑","Arial","Helvetica","sans-serif";
 }
 .wrap{
 	margin: 0 auto;
@@ -80,14 +82,17 @@ body{
 	-moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	-ms-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 	-o-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+	overflow: auto;
 }
 
 /* tophead css */
 .tophead{
-	padding-bottom: 30px;
-	text-align: center;
+	padding-bottom: 30px;	
 	border-bottom: 1px solid #eee;
 	text-shadow: 0 1px 0 #fff;
+}
+.tophead,.ch-item,.mtxt p,.pagefoot{
+	text-align: center;
 }
 .tophead h1{
 	font: 50px/1.2em "Hiragino Sans GB","Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,tahoma,arial,simsun,\5B8B\4F53;
@@ -96,6 +101,7 @@ body{
 	display: inline-block;
 	color: #323130;
 	overflow: hidden;
+	border-bottom:1px solid #fff;
 }
 .tophead h1 a span{
 	position: relative;
@@ -106,7 +112,7 @@ body{
 	     -o-transition: -o-transform 0.3s;
 	        transition: transform 0.3s;
 }
-.tophead h1 a:hover,.tophead h1 a:focus{
+.tophead h1 a:hover,.tophead h1 a:focus,.marticle header h1 a:hover,.marticle header h1 a:focus{
 	background-color: #fff;
 	border-bottom:1px solid #e4e0da;
 }
@@ -122,4 +128,224 @@ body{
 	-webkit-transform: translate3d(0,0,0);
 	-moz-transform: translate3d(0,0,0);
 	transform: translate3d(0,0,0);
+}
+
+/* 侧边 css*/
+.rside{
+	padding:  30px 0 40px;
+	float: right;
+	width: 260px;
+}
+.rside,.articlewrap{
+	overflow: hidden;
+	word-wrap: break-word;
+}
+.ch-item{
+	margin: 0 auto;
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	position: relative;
+	cursor: default;
+	background-image: url(../img/touxiang.jpg);
+	box-shadow: inset 0 0 0 0 rgba(14,83,170, 0.4),
+				inset 0 0 0 12px rgba(255,255,255,0.6), 
+				0 1px 2px rgba(0,0,0,0.1);
+}
+.ch-item,.ch-info{
+	-webkit-transition: all .4s ease-in-out;
+	   -moz-transition: all .4s ease-in-out;
+	    -ms-transition: all .4s ease-in-out;
+	     -o-transition: all .4s ease-in-out;
+	        transition: all .4s ease-in-out;
+}
+.ch-item:hover{
+	box-shadow: inset 0 0 0 70px rgba(14,83,170, 0.4), 
+				inset 0 0 0 12px rgba(255,255,255,0.8), 
+				0 1px 2px rgba(0,0,0,0.1);
+}
+.ch-info{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	opacity: 0;
+	-webkit-transform: scale(0);
+	   -moz-transform: scale(0);
+	    -ms-transform: scale(0);
+	     -o-transform: scale(0);
+	        transform: scale(0);
+	-webkit-backface-visibility: hidden;
+}
+.ch-item:hover .ch-info{
+	opacity: 1;
+	-webkit-transform: scale(1);
+	   -moz-transform: scale(1);
+	    -ms-transform: scale(1);
+	     -o-transform: scale(1);
+	        transform: scale(1);
+}
+.ch-info h3{
+	color: #fff;
+	position: relative;
+	letter-spacing: 2px;
+	font-size: 22px;
+	margin: 0 24px;
+	padding: 28px 0 0 0;
+	height: 32px;
+	text-shadow: 0 0 1px #fff, 
+				0 1px 2px rgba(0,0,0,0.3);		
+	font-family: "Hiragino Sans GB","Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,tahoma,arial,simsun,\5B8B\4F53;
+}
+.ch-info p{
+	color: #fff;
+	padding: 6px 5px;
+	font-style: italic;
+	margin: 0 24px;
+	font-size: 12px;
+	border-top: 1px solid rgba(255,255,255,0.5);
+	font-family: Cambria, Georgia, serif;
+}
+.ch-info p a{
+	display: block;
+	color: rgba(255,255,255,0.7);
+	font-style: normal;
+	text-shadow: uppercase;
+	font-size: 14px;
+	letter-spacing: 1px;
+	padding-top:  4px;
+	font-family: 'Open Sans', Arial, sans-serif;
+}
+.ch-info p a,.mtxt p{
+	font-weight: 700;
+}
+.ch-info p a:hover{
+	color: rgba(255,242,34, 0.8);
+}
+.mtxt{
+	margin-top: 20px;
+}
+.mtxt p{
+	padding: 18px 0 26px;
+	font-size: 16px;
+	border-top: 1px solid #eee;
+	color: #333;
+}
+/* 搜索 */
+.searchbox{
+	padding: 8px;
+	margin: 0;
+	overflow: auto;
+	border: 1px solid #ded9d4;
+}
+.searchbox input{
+	border: 1px inset #eee7e0;
+	width: 152px;
+	margin: 0 5px 0 0;
+}
+.searchbox button{
+	height: 36px;
+	border: 1px solid #eee7e0;
+	width: 75px;
+	background: none;
+}
+.searchbox button:active{
+	background-color:#d8d0c9;
+}
+.searchbox input,.searchbox button{
+	font: normal 16px/22px "Hiragino Sans GB","Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,tahoma,arial,simsun,\5B8B\4F53;
+	float: left;
+	padding: 6px 4px;
+	outline: none;
+}
+
+/* 文章区 css */
+.articlewrap{
+	margin-right: 275px;
+	padding: 30px 17px 40px 0;
+	border-right: 1px solid #eee;
+}
+.marticle{
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px dotted #e5e5e5;
+}
+.tagsbox{
+	float: right;
+	max-width: 356px;
+	color: #888;
+}
+.time,.marticle header h1{
+	margin-bottom: 15px;
+}
+.time span{
+	color: #989592;
+}
+.tagsbox a{
+	margin-right: 3px;
+	padding: 5px;
+	border-radius: 3px;
+	font-size: 12px;
+	background: #f7f7f7;
+	-webkit-transition: all .35s ease-in-out;
+	   -moz-transition: all .35s ease-in-out;
+	    -ms-transition: all .35s ease-in-out;
+	     -o-transition: all .35s ease-in-out;
+	        transition: all .35s ease-in-out;
+}
+.tagsbox a:hover{
+	background: #47afd5;
+	color: #fff;
+}
+.marticle header h1{
+	font: normal 30px/40px "Hiragino Sans GB","Microsoft YaHei",\5FAE\8F6F\96C5\9ED1,tahoma,arial,simsun,\5B8B\4F53;
+}
+.acontent p{
+	margin-bottom: 26px;
+	line-height: 1.8em;
+}
+.acontent p a:hover,.pagefoot p a:hover{
+	text-decoration: underline;
+}
+.external{
+	padding-right: 4px;
+	color: #4a75b5;
+}
+.disc{
+	margin-left: 25px;
+}
+.disc li{
+	margin-bottom: 5px;
+	list-style: disc;
+	line-height: 1.8em;
+}
+.continueread a{
+	display: inline-block;
+	margin-top: 20px;
+	padding: 12px 15px 11px 15px;
+	line-height: 1;
+	background: #989592;
+	color: #fff;	
+}
+.continueread a:hover{
+	background: #323130;
+}
+.continueread a,.rjiantou{
+	-webkit-transition: all .25s ease-in-out;
+	   -moz-transition: all .25s ease-in-out;
+	    -ms-transition: all .25s ease-in-out;
+	     -o-transition: all .25s ease-in-out;
+	        transition: all .25s ease-in-out;
+}
+.continueread a:hover .rjiantou{
+	padding-left: 12px;
+}
+
+/* footer css */
+.pagefoot{
+	padding-top: 40px;
+	text-shadow: 0 2px 0 #fff;
+}
+.pagefoot,.pagefoot p a{
+	color: rgba(0,0,0,0.5);
 }
