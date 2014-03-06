@@ -12,8 +12,8 @@
 </head>
 <body>
 	<div class="wrap">
-		<div id="papera" style="height: 1024px;"></div>
-		<div id="paperb" style="height: 1024px;"></div>
+		<div id="papera"></div>
+		<div id="paperb"></div>
 		<!-- blog wrap-->
 		<div class="contentwrap">
 			<header class="tophead">
@@ -51,7 +51,7 @@
 					</div>
 				</aside>
 				<!--文章区-->
-				<div class="articlewrap">
+				<div id="paperc" class="articlewrap">
 					<article class="marticle">
 						<header>
 							<div class="time">
@@ -453,13 +453,25 @@
 		<footer class="pagefoot">
 			<p>
 				<span>©</span>
-				预览 Themed By 
+				初稿 Themed By 
 				<a href="#">LOFTER. </a>
 			</p>
 			<p>
 				Powered By <a href="#">Bevis</a>
 			</p>
 		</footer>
+		<script type="text/javascript">
+		var $$ = function(id){
+			return document.getElementById(id);
+		};
+		(function(){
+			var papera = $$("papera"),
+				paperb = $$("paperb"),
+				paperc = $$("paperc"),
+				stylecH = paperc.offsetHeight;
+			papera.style.height = paperb.style.height = stylecH + "px";
+		}());
+		</script>
 	</div>
 	<!--<div>
 		<script>
